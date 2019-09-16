@@ -8,69 +8,102 @@ document.addEventListener("DOMContentLoaded", () => {
     //   scale: 1.4
     // })
 
-    .fromTo(
+    .to(
+      "#four",
+      6,
+      {
+        y: -400
+      },
+      "-=6"
+    )
+    .to(
       "#three",
-      8,
+      6,
       {
-        y: 0,
-        // scale: 1,
-        bottom: "0%",
-        opacity: 0.9,
-        webkitMaskBoxImage: "linear-gradient(black 50%, transparent 120%)"
-        // ease: Power1.easeInOut
-        // delay: 3
+        y: -300
       },
-      {
-        bottom: "10%",
-        y: -190,
-        // scale: 1.2,
-        opacity: 1,
-        webkitMaskBoxImage: "linear-gradient(black 100%, transparent 100%)"
-        // ease: Power1.easeInOut
-        // position: "fixed"
-      },
-      "-=5"
+      "-=6"
     )
     .to(
       "#two",
-      8,
-      {
-        y: -200,
-        // width: "120%",
-        transformOrigin: "center",
-        // scale: 1.2,
-        opacity: 0.3
-      },
-      "-=8"
-    )
-    .to(
-      "#one",
-      8,
-      {
-        y: -200,
-        // width: "120%",
-        transformOrigin: "center"
-        // scale: 1.2,
-        // opacity: 0.3
-      },
-      "-=8"
-    )
-    .to(
-      "#two",
-      8,
+      6,
       {
         y: -200
       },
-      "-=8"
+      "-=6"
     )
     .to(
-      "#four",
-      8,
+      "#one",
+      6,
       {
         y: -100
       },
-      "-=8"
+      "-=6"
     )
+
+    // .fromTo(
+    //   "#three",
+    //   8,
+    //   {
+    //     y: 0,
+    //     // scale: 1,
+    //     bottom: "0%",
+    //     opacity: 0.9,
+    //     webkitMaskBoxImage: "linear-gradient(black 50%, transparent 120%)"
+    //     // ease: Power1.easeInOut
+    //     // delay: 3
+    //   },
+    //   {
+    //     bottom: "10%",
+    //     y: -190,
+    //     // scale: 1.2,
+    //     opacity: 1,
+    //     webkitMaskBoxImage: "linear-gradient(black 100%, transparent 100%)"
+    //     // ease: Power1.easeInOut
+    //     // position: "fixed"
+    //   },
+    //   "-=5"
+    // )
+    // .to(
+    //   "#two",
+    //   8,
+    //   {
+    //     y: -200,
+    //     // width: "120%",
+    //     transformOrigin: "center",
+    //     // scale: 1.2,
+    //     opacity: 0.3
+    //   },
+    //   "-=8"
+    // )
+    // .to(
+    //   "#one",
+    //   8,
+    //   {
+    //     y: -200,
+    //     // width: "120%",
+    //     transformOrigin: "center"
+    //     // scale: 1.2,
+    //     // opacity: 0.3
+    //   },
+    //   "-=8"
+    // )
+    // .to(
+    //   "#two",
+    //   8,
+    //   {
+    //     y: -200
+    //   },
+    //   "-=8"
+    // )
+    // .to(
+    //   "#four",
+    //   8,
+    //   {
+    //     y: -100
+    //   },
+    //   "-=8"
+    // )
     .to(
       ".content, .blur",
       8,
@@ -136,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let scene = new ScrollMagic.Scene({
     triggerElement: "section",
-    duration: 5000,
+    duration: "200%",
     triggerHook: 0
   })
     .setTween(timeline)
