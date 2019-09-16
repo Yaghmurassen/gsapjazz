@@ -9,21 +9,21 @@ document.addEventListener("DOMContentLoaded", () => {
     // })
 
     .fromTo(
-      "#fifth",
+      "#three",
       8,
       {
         y: 0,
-        scale: 1,
-        bottom: "-18.7%",
+        // scale: 1,
+        bottom: "0%",
         opacity: 0.9,
         webkitMaskBoxImage: "linear-gradient(black 50%, transparent 120%)"
         // ease: Power1.easeInOut
         // delay: 3
       },
       {
-        bottom: "-21%",
+        bottom: "10%",
         y: -190,
-        scale: 1.2,
+        // scale: 1.2,
         opacity: 1,
         webkitMaskBoxImage: "linear-gradient(black 100%, transparent 100%)"
         // ease: Power1.easeInOut
@@ -32,31 +32,31 @@ document.addEventListener("DOMContentLoaded", () => {
       "-=5"
     )
     .to(
-      "#forth",
+      "#two",
       8,
       {
         y: -200,
         // width: "120%",
         transformOrigin: "center",
-        scale: 1.2,
+        // scale: 1.2,
         opacity: 0.3
       },
       "-=8"
     )
     .to(
-      "#third",
+      "#one",
       8,
       {
         y: -200,
         // width: "120%",
-        transformOrigin: "center",
-        scale: 1.2,
-        opacity: 0.3
+        transformOrigin: "center"
+        // scale: 1.2,
+        // opacity: 0.3
       },
       "-=8"
     )
     .to(
-      "#second",
+      "#two",
       8,
       {
         y: -200
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "-=8"
     )
     .to(
-      "#first",
+      "#four",
       8,
       {
         y: -100
