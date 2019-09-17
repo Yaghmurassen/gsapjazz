@@ -3,16 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let timeline = new TimelineMax({ onComplete: traveling });
   timeline
-    // .to("#sixth", 8, {
-    //   y: -700,
-    //   scale: 1.4
-    // })
-
     .to(
       "#four",
       6,
       {
-        y: -400
+        y: -700
       },
       "-=6"
     )
@@ -20,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "#three",
       6,
       {
-        y: -300
+        y: -500
       },
       "-=6"
     )
@@ -28,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "#two",
       6,
       {
-        y: -200
+        y: -350
       },
       "-=6"
     )
@@ -36,136 +31,35 @@ document.addEventListener("DOMContentLoaded", () => {
       "#one",
       6,
       {
-        y: -100
+        y: -150
       },
       "-=6"
     )
-
-    // .fromTo(
-    //   "#three",
-    //   8,
-    //   {
-    //     y: 0,
-    //     // scale: 1,
-    //     bottom: "0%",
-    //     opacity: 0.9,
-    //     webkitMaskBoxImage: "linear-gradient(black 50%, transparent 120%)"
-    //     // ease: Power1.easeInOut
-    //     // delay: 3
-    //   },
-    //   {
-    //     bottom: "10%",
-    //     y: -190,
-    //     // scale: 1.2,
-    //     opacity: 1,
-    //     webkitMaskBoxImage: "linear-gradient(black 100%, transparent 100%)"
-    //     // ease: Power1.easeInOut
-    //     // position: "fixed"
-    //   },
-    //   "-=5"
-    // )
-    // .to(
-    //   "#two",
-    //   8,
-    //   {
-    //     y: -200,
-    //     // width: "120%",
-    //     transformOrigin: "center",
-    //     // scale: 1.2,
-    //     opacity: 0.3
-    //   },
-    //   "-=8"
-    // )
-    // .to(
-    //   "#one",
-    //   8,
-    //   {
-    //     y: -200,
-    //     // width: "120%",
-    //     transformOrigin: "center"
-    //     // scale: 1.2,
-    //     // opacity: 0.3
-    //   },
-    //   "-=8"
-    // )
-    // .to(
-    //   "#two",
-    //   8,
-    //   {
-    //     y: -200
-    //   },
-    //   "-=8"
-    // )
-    // .to(
-    //   "#four",
-    //   8,
-    //   {
-    //     y: -100
-    //   },
-    //   "-=8"
-    // )
     .to(
       ".content, .blur",
-      8,
+      6,
       {
         top: "0%"
       },
-      "-=8"
+      "-=6"
+    )
+    .to(
+      ".img-max",
+      6,
+      {
+        top: "20%"
+      },
+      "-=6"
     )
     .to(
       ".title, nav, .footer-wrapper",
-      8,
+      6,
       {
         y: "-100%",
         opacity: 0
       },
-      "-=8"
+      "-=6"
     );
-  // .from(
-  //   ".one",
-  //   3,
-  //   {
-  //     top: "40px",
-  //     autoAlpha: 0
-  //   },
-  //   "-=4"
-  // )
-  // .from(
-  //   ".two",
-  //   3,
-  //   {
-  //     top: "40px",
-  //     autoAlpha: 0
-  //   },
-  //   "-=3.5"
-  // )
-  // .from(
-  //   ".three",
-  //   3,
-  //   {
-  //     top: "40px",
-  //     autoAlpha: 0
-  //   },
-  //   "-=3.5"
-  // )
-  // .from(
-  //   ".four",
-  //   3,
-  //   {
-  //     top: "40px",
-  //     autoAlpha: 0
-  //   },
-  //   "-=3.5"
-  // )
-  // .from(
-  //   ".text",
-  //   3,
-  //   {
-  //     y: 60,
-  //     autoAlpha: 0
-  //   },
-  //   "-=4"
-  // );
 
   let scene = new ScrollMagic.Scene({
     triggerElement: "section",
