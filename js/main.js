@@ -1,7 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   let controller = new ScrollMagic.Controller();
 
-  let timeline = new TimelineMax({ onComplete: traveling });
+  let timeline = new TimelineMax({
+    onComplete: function() {
+      $(".blur").addClass("hide");
+      console.log(" Marche ?");
+    },
+    onStart: function() {
+      $(".blur").removeClass("hide");
+    }
+  });
   timeline
     .to(
       "#four",
@@ -85,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
 traveling = () => {
   console.log("ARHALOULOULOU");
   // new TimelineMax().set(".image-wrapper img", { className: "+=bat-fix" });
-  // new TimelineMax().set(".hide", { className: "+=show" });
+  new TimelineMax().set(".blur", { className: "+=hide" });
 };
 
 // const btnOpen = document.querySelector(".btn-open");
