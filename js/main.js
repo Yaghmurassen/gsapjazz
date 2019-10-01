@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ".content, .blur",
       6,
       {
-        top: "0%"
+        top: "-53%"
       },
       "-=6"
     )
@@ -67,6 +67,51 @@ document.addEventListener("DOMContentLoaded", () => {
         opacity: 0
       },
       "-=6"
+    )
+    .from(
+      ".un",
+      3,
+      {
+        top: "40px",
+        autoAlpha: 0
+      },
+      "-=4"
+    )
+    .from(
+      ".deux",
+      3,
+      {
+        top: "40px",
+        autoAlpha: 0
+      },
+      "-=3.5"
+    )
+    .from(
+      ".trois",
+      3,
+      {
+        top: "40px",
+        autoAlpha: 0
+      },
+      "-=3.5"
+    )
+    .from(
+      ".quatre",
+      3,
+      {
+        top: "40px",
+        autoAlpha: 0
+      },
+      "-=3.5"
+    )
+    .from(
+      ".text",
+      3,
+      {
+        y: 60,
+        autoAlpha: 0
+      },
+      "-=4"
     );
 
   let scene = new ScrollMagic.Scene({
