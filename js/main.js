@@ -11,20 +11,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   timeline
-    .to(
-      "#four",
-      6,
-      {
-        y: -700
-      },
-      "-=6"
-    )
-    .to(
+    // .to(
+    //   "#four",
+    //   6,
+    //   {
+    //     y: -700
+    //   },
+    //   "-=6"
+    // )
+    .fromTo(
       "#three",
       6,
       {
-        y: -500
+        y: "74%",
+        autoAlpha: 1
       },
+      { y: -250, ease: Power1.easeInOut },
       "-=6"
     )
     .to(
@@ -115,13 +117,14 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
   let scene = new ScrollMagic.Scene({
-    triggerElement: "section",
-    duration: "200%",
+    triggerElement: "first-section",
+    duration: "100%",
     triggerHook: 0
   })
     .setTween(timeline)
     .setPin("section")
     .addTo(controller);
+  // scene.offset(975);
 });
 
 // traveling = () => {

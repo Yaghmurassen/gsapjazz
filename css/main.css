@@ -117,11 +117,11 @@ li {
 }
 
 .content {
-  height: 160%;
+  height: 100%;
   width: 100%;
-  background-image: url(/img/uno-dos.png);
+  /* background-image: url(/img/uno-dos.png);
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   z-index: 0;
   top: 100%;
   position: absolute;
@@ -148,8 +148,10 @@ li {
 }
 
 .content-image-wrapper {
-  height: 220px;
-  width: 150px;
+  /* height: 220px;
+  width: 150px; */
+  height: 100%;
+  width: 100%;
   text-align: center;
   position: relative;
 }
@@ -168,7 +170,8 @@ li {
   top: -50px;
 }
 .three {
-  top: 20px;
+  top: 74%;
+  position: absolute;
 }
 .four {
   top: -20px;
@@ -198,6 +201,8 @@ li {
 .bat {
   position: absolute;
   bottom: -88%;
+  height: 100vh;
+  width: 100%;
 }
 
 /* .hide {
