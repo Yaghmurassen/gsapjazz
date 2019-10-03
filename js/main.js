@@ -2,13 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
   let controller = new ScrollMagic.Controller();
 
   let timeline = new TimelineMax({
-    onComplete: function() {
-      $(".blur").addClass("hide");
-      console.log(" Marche ?");
-    },
-    onStart: function() {
-      $(".blur").removeClass("hide");
-    }
+    // onComplete: function() {
+    //   $(".blur").addClass("hide");
+    //   console.log(" Marche ?");
+    // },
+    // onStart: function() {
+    //   $(".blur").removeClass("hide");
+    // }
   });
   timeline
     .to(
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "#three",
       6,
       {
-        y: -500
+        y: -600
       },
       "-=6"
     )
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "#two",
       6,
       {
-        y: -350
+        y: -500
       },
       "-=6"
     )
@@ -39,15 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "#one",
       6,
       {
-        y: -150
-      },
-      "-=6"
-    )
-    .to(
-      ".content, .blur",
-      6,
-      {
-        top: "0%"
+        y: -250
       },
       "-=6"
     )
@@ -55,23 +47,32 @@ document.addEventListener("DOMContentLoaded", () => {
       ".img-max",
       6,
       {
-        top: "20%"
+        top: "30%",
+        autoAlpha: 1
       },
       "-=6"
     )
     .to(
-      ".title, nav, .footer-wrapper",
+      ".content",
       6,
       {
-        y: "-100%",
-        opacity: 0
+        top: "-20%"
       },
       "-=6"
     );
+  .to(
+    ".title, nav, .footer-wrapper",
+    6,
+    {
+      y: "-100%",
+      opacity: 0
+    },
+    "-=6"
+  );
 
   let scene = new ScrollMagic.Scene({
     triggerElement: "section",
-    duration: "200%",
+    duration: 2000,
     triggerHook: 0
   })
     .setTween(timeline)
@@ -90,11 +91,11 @@ document.addEventListener("DOMContentLoaded", () => {
 //   });
 // };
 
-traveling = () => {
-  console.log("ARHALOULOULOU");
-  // new TimelineMax().set(".image-wrapper img", { className: "+=bat-fix" });
-  new TimelineMax().set(".blur", { className: "+=hide" });
-};
+// traveling = () => {
+//   console.log("ARHALOULOULOU");
+//   // new TimelineMax().set(".image-wrapper img", { className: "+=bat-fix" });
+//   new TimelineMax().set(".blur", { className: "+=hide" });
+// };
 
 // const btnOpen = document.querySelector(".btn-open");
 // console.log(btnOpen);
