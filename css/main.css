@@ -88,13 +88,24 @@ section {
 
 .blur {
   width: 100%;
-  height: 280px;
-  background-color: #1d1f45;
+  height: 290px;
+  /* background-color: #1d1f45; */
   position: absolute;
   bottom: -200px;
-  filter: blur(30px);
+  top: 100%;
+  /* filter: blur(30px); */
   z-index: 999;
+  background-image: url(/img/deg-gsap3.png);
+  background-size: contain;
+  /* background-size: cover;
+  background-repeat: no-repeat; */
 }
+
+/* .blur {
+  background-image: url(/img/deg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
 
 .footer-wrapper {
   position: absolute;
@@ -234,7 +245,7 @@ li {
   width: 100%;
   height: 100vh;
   position: absolute;
-  top: 100%;
+  top: 115%;
 }
 
 .img-bas {

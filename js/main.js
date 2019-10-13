@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "#three",
       6,
       {
-        y: -600
+        y: -500
       },
       "-=6"
     )
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "#two",
       6,
       {
-        y: -500
+        y: -350
       },
       "-=6"
     )
@@ -47,28 +47,28 @@ document.addEventListener("DOMContentLoaded", () => {
       ".img-max",
       6,
       {
-        top: "30%",
+        top: "47%",
         autoAlpha: 1
       },
       "-=6"
     )
     .to(
-      ".content",
+      ".content, .blur",
       6,
       {
-        top: "-20%"
+        top: "19%"
+      },
+      "-=6.2"
+    )
+    .to(
+      ".title, nav, .footer-wrapper",
+      6,
+      {
+        y: "-100%",
+        opacity: 0
       },
       "-=6"
     );
-  .to(
-    ".title, nav, .footer-wrapper",
-    6,
-    {
-      y: "-100%",
-      opacity: 0
-    },
-    "-=6"
-  );
 
   let scene = new ScrollMagic.Scene({
     triggerElement: "section",
