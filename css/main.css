@@ -259,3 +259,10 @@ li {
 .hide {
   display: none;
 }
+
+.btn-test {
+  position: absolute;
+  left: 50%;
+  z-index: 99999999;
+  bottom: 20%;
+}
