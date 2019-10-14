@@ -125,6 +125,31 @@ document.addEventListener("DOMContentLoaded", () => {
     .setPin("section")
     .addTo(controller);
   // scene.offset(975);
+
+  $(".btn-test").click(() => {
+    const timelineFirstScreen = new TimelineMax({
+      paused: true,
+      onComplete: function() {
+        $("#first-section").hide();
+        console.log(" ca hide le container sans pression ?");
+      }
+    });
+    // e.preventDefault;
+
+    timelineFirstScreen.to(".first-screen", 0.5, {
+      top: 0,
+      left: 0,
+      ease: Power2.easeInOut
+    });
+    timelineFirstScreen.play();
+    console.log("click!!!");
+
+    $(".btn-reverse").click(() => {
+      timelineFirstScreen.reverse();
+      $("#first-section").show();
+      $(".btn-test").hide();
+    });
+  });
 });
 
 // traveling = () => {
@@ -185,7 +210,39 @@ traveling = () => {
 //   console.log("CLIQUEZ BANDE DE SALOPES!!!!!!!");
 // });
 
+$(".btn-test").click(() => {
+  const timelineFirstScreen = new TimelineMax({ paused: true });
+  // e.preventDefault;
+
+  timelineFirstScreen.to(".first-screen", 2, {
+    top: 0,
+    left: 0,
+    ease: Power2.easeInOut
+  });
+  timelineFirstScreen.play();
+  console.log("click!!!");
+});
+
 // btnOpen.addEventListener("click", () => {
 //   tl.play();
 //   console.log("CLIQUEZ BANDE DE SALOPES!!!!!!!");
+// });
+
+// $(".box").each(function(index, element) {
+//   //create a timeline for each box
+//   var tl = new TimelineLite({ paused: true });
+//   tl.to(this, 0.2, { width: 100 }).to(this, 0.2, { text: "active" });
+//   //assign an animation property to the box
+//   this.animation = tl;
+
+//   $(this).click(function() {
+//     if (currentAnimation) {
+//       //if there is a currentAnimation reverse it
+//       currentAnimation.reverse();
+//     }
+//     //play this box's animation
+//     this.animation.play();
+//     //set current animation to this box's animtion
+//     currentAnimation = this.animation;
+//   });
 // });
