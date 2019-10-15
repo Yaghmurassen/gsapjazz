@@ -131,6 +131,12 @@ document.addEventListener("DOMContentLoaded", () => {
       paused: true,
       onComplete: function() {
         $("#first-section").hide();
+        $("body,html").animate(
+          {
+            scrollTop: 0 // Scroll to top of body
+          },
+          500
+        );
         console.log(" ca hide le container sans pression ?");
       }
     });
@@ -139,10 +145,10 @@ document.addEventListener("DOMContentLoaded", () => {
     timelineFirstScreen.to(".first-screen", 0.5, {
       top: 0,
       left: 0,
-      ease: Power2.easeInOut
+      ease: Power2.easeInOut,
+      scrollTo: 100
     });
     timelineFirstScreen.play();
-    console.log("click!!!");
 
     $(".btn-reverse").click(() => {
       timelineFirstScreen.reverse();
