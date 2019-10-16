@@ -163,18 +163,17 @@ li {
   height: 100%;
 }
 
-.one {
-  top: -10px;
+#one {
+  top: 0px;
 }
-.two {
-  top: -50px;
+#two {
+  top: 0px;
 }
-.three {
-  top: 74%;
-  position: absolute;
+#four {
+  bottom: -560px;
 }
-.four {
-  top: -20px;
+#three {
+  top: 0px;
 }
 
 .content-image-wrapper h4 {
@@ -263,8 +262,8 @@ li {
 .btn-test {
   position: absolute;
   left: 50%;
-  z-index: 99999999;
-  bottom: 20%;
+  /* z-index: 99999999; */
+  bottom: -45%;
 }
 
 .first-screen {

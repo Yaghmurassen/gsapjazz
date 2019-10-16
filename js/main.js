@@ -11,29 +11,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   timeline
-    // .to(
-    //   "#four",
-    //   6,
-    //   {
-    //     y: -700
-    //   },
-    //   "-=6"
-    // )
-    .fromTo(
+    .to(
+      "#four",
+      6,
+      // {
+      //   y: "74%",
+      //   autoAlpha: 1
+      // },
+      { y: -940 }
+    )
+    .to(
       "#three",
       6,
       {
-        y: "74%",
-        autoAlpha: 1
+        y: -700
       },
-      { y: -250, ease: Power1.easeInOut },
       "-=6"
     )
     .to(
       "#two",
       6,
       {
-        y: -350
+        y: -500
       },
       "-=6"
     )
@@ -41,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "#one",
       6,
       {
-        y: -150
+        y: -250
       },
       "-=6"
     )
@@ -117,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
   let scene = new ScrollMagic.Scene({
-    triggerElement: "first-section",
+    triggerElement: "body",
     duration: "100%",
     triggerHook: 0
   })
@@ -146,14 +145,15 @@ document.addEventListener("DOMContentLoaded", () => {
       top: 0,
       left: 0,
       ease: Power2.easeInOut,
-      scrollTo: 100
+      scrollTo: 100,
+      skew: -90
     });
     timelineFirstScreen.play();
 
     $(".btn-reverse").click(() => {
       timelineFirstScreen.reverse();
       $("#first-section").show();
-      $(".btn-test").hide();
+      $(".btn-test").css({ bottom: "-100%", "margin-bottom": "500px" });
     });
   });
 });
