@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     onComplete: function() {
       $(".blur").addClass("hide");
       console.log(" Marche ?");
+      $(".btn-test").css("display", "block");
     },
     onStart: function() {
       $(".blur").removeClass("hide");
@@ -129,31 +130,71 @@ document.addEventListener("DOMContentLoaded", () => {
     const timelineFirstScreen = new TimelineMax({
       paused: true,
       onComplete: function() {
-        $("#first-section").hide();
-        $("body,html").animate(
-          {
-            scrollTop: 0 // Scroll to top of body
-          },
-          500
-        );
-        console.log(" ca hide le container sans pression ?");
+        $(".fscreen").css("height", "200vh");
+        // $("#first-section").hide();
+        // $("body,html").animate(
+        //   {
+        //     scrollTop: 0 // Scroll to top of body
+        //   },
+        //   500
+        // );
+        // console.log(" ca hide le container sans pression ?");
       }
     });
     // e.preventDefault;
 
-    timelineFirstScreen.to(".first-screen", 0.5, {
-      top: 0,
-      left: 0,
-      ease: Power2.easeInOut,
-      scrollTo: 100,
-      skew: -90
-    });
+    timelineFirstScreen
+      .to(".fscreen", 0.5, {
+        // top: 0,
+        // left: 0,
+        // top: "100%",
+        ease: Power1.easeIn,
+        opacity: 1,
+        zIndex: 1,
+        height: "100vh"
+        // display: "block"
+        // scrollTo: 100
+        // skew: -90
+      })
+      .to(
+        ".scrollmagic-pin-spacer",
+        0.5,
+        {
+          opacity: 0,
+          ease: Power1.easeInOut
+        },
+        "-=1"
+      );
     timelineFirstScreen.play();
+    // $("body").toggle(".hide-body");
+    // $("#first-section").css("position", "absolute");
+    $("body").addClass("hide-body");
+    $(".scrollmagic-pin-spacer").addClass("hide-spacer");
 
-    $(".btn-reverse").click(() => {
+    $(".btn-opacity").click(() => {
+      // $("body").toggle(".hide-body");
+      // $("#first-section").css("position", "fixed");
+      $("body").removeClass("hide-body");
+      $(".scrollmagic-pin-spacer").removeClass("hide-spacer");
       timelineFirstScreen.reverse();
       $("#first-section").show();
-      $(".btn-test").css({ bottom: "-100%", "margin-bottom": "500px" });
+      timelineFirstScreen.to(
+        ".scrollmagic-pin-spacer",
+        0.5,
+        {
+          opacity: 1,
+          ease: Power1.easeInOut
+        },
+        "-=1"
+      );
+      // $("#first-section").animate(
+      //   {
+      //     scrollTop: "-300px" // Scroll to top of body
+      //   },
+      //   500
+      // );
+      console.log(" ca hide le container sans pression ?");
+      // $(".btn-test").css({ bottom: "-100%", "margin-bottom": "500px" });
     });
   });
 });
