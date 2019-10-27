@@ -176,8 +176,13 @@ li {
 .two {
   top: -50px;
 }
+<<<<<<< HEAD
 .three {
   top: 20px;
+=======
+#four {
+  bottom: -602px;
+>>>>>>> 4e317a1... Fscreen
 }
 .four {
   top: -20px;
@@ -259,12 +264,12 @@ li {
   display: none;
 }
 
-.btn-test {
+/* .btn-test {
   position: absolute;
   left: 50%;
   bottom: -45%;
   display: none;
-}
+} */
 
 .fscreen {
   width: 100%;
@@ -302,3 +307,16 @@ li {
 #first-section {
   position: fixed !important;
 }
+
+.hide-spacer {
+  top: 100% !important;
+  position: absolute !important;
+  height: 0px !important;
+  padding: unset !important;
+}
+
+/* .btn-reverse  {
+  position: absolute;
+  bottom: 100px;
+  right: 70px;
+} */
