@@ -2,17 +2,27 @@ document.addEventListener("DOMContentLoaded", () => {
   let controller = new ScrollMagic.Controller();
 
   let timeline = new TimelineMax({
-    // onComplete: function() {
-    //   $(".blur").addClass("hide");
-    //   console.log(" Marche ?");
-    // },
-    // onStart: function() {
-    //   $(".blur").removeClass("hide");
-    // }
+    onComplete: function() {
+      $(".blur").addClass("hide");
+      console.log(" Marche ?");
+      $(".btn-test").css("display", "block");
+    },
+    onStart: function() {
+      $(".blur").removeClass("hide");
+    }
   });
   timeline
     .to(
       "#four",
+      6,
+      // {
+      //   y: "74%",
+      //   autoAlpha: 1
+      // },
+      { y: -940 }
+    )
+    .to(
+      "#three",
       6,
       {
         y: -700
@@ -20,18 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
       "-=6"
     )
     .to(
-      "#three",
-      6,
-      {
-        y: -500
-      },
-      "-=6"
-    )
-    .to(
       "#two",
       6,
       {
-        y: -350
+        y: -500
       },
       "-=6"
     )
@@ -44,21 +46,20 @@ document.addEventListener("DOMContentLoaded", () => {
       "-=6"
     )
     .to(
-      ".img-max",
+      ".content, .blur",
       6,
       {
-        top: "47%",
-        autoAlpha: 1
+        top: "-53%"
       },
       "-=6"
     )
     .to(
-      ".content, .blur",
+      ".img-max",
       6,
       {
-        top: "19%"
+        top: "20%"
       },
-      "-=6.2"
+      "-=6"
     )
     .to(
       ".title, nav, .footer-wrapper",
@@ -68,11 +69,56 @@ document.addEventListener("DOMContentLoaded", () => {
         opacity: 0
       },
       "-=6"
+    )
+    .from(
+      ".un",
+      3,
+      {
+        top: "40px",
+        autoAlpha: 0
+      },
+      "-=4"
+    )
+    .from(
+      ".deux",
+      3,
+      {
+        top: "40px",
+        autoAlpha: 0
+      },
+      "-=3.5"
+    )
+    .from(
+      ".trois",
+      3,
+      {
+        top: "40px",
+        autoAlpha: 0
+      },
+      "-=3.5"
+    )
+    .from(
+      ".quatre",
+      3,
+      {
+        top: "40px",
+        autoAlpha: 0
+      },
+      "-=3.5"
+    )
+    .from(
+      ".text",
+      3,
+      {
+        y: 60,
+        autoAlpha: 0
+      },
+      "-=4"
     );
 
   let scene = new ScrollMagic.Scene({
-    triggerElement: "section",
-    duration: 2000,
+    triggerElement: "body",
+    duration: "100%",
     triggerHook: 0
   })
     .setTween(timeline)
@@ -164,11 +210,11 @@ document.addEventListener("DOMContentLoaded", () => {
 //   });
 // };
 
-// traveling = () => {
-//   console.log("ARHALOULOULOU");
-//   // new TimelineMax().set(".image-wrapper img", { className: "+=bat-fix" });
-//   new TimelineMax().set(".blur", { className: "+=hide" });
-// };
+traveling = () => {
+  console.log("ARHALOULOULOU");
+  // new TimelineMax().set(".image-wrapper img", { className: "+=bat-fix" });
+  new TimelineMax().set(".blur", { className: "+=hide" });
+};
 
 // const btnOpen = document.querySelector(".btn-open");
 // console.log(btnOpen);
@@ -211,7 +257,39 @@ document.addEventListener("DOMContentLoaded", () => {
 //   console.log("CLIQUEZ BANDE DE SALOPES!!!!!!!");
 // });
 
+$(".btn-test").click(() => {
+  const timelineFirstScreen = new TimelineMax({ paused: true });
+  // e.preventDefault;
+
+  timelineFirstScreen.to(".first-screen", 2, {
+    top: 0,
+    left: 0,
+    ease: Power2.easeInOut
+  });
+  timelineFirstScreen.play();
+  console.log("click!!!");
+});
+
 // btnOpen.addEventListener("click", () => {
 //   tl.play();
 //   console.log("CLIQUEZ BANDE DE SALOPES!!!!!!!");
+// });
+
+// $(".box").each(function(index, element) {
+//   //create a timeline for each box
+//   var tl = new TimelineLite({ paused: true });
+//   tl.to(this, 0.2, { width: 100 }).to(this, 0.2, { text: "active" });
+//   //assign an animation property to the box
+//   this.animation = tl;
+
+//   $(this).click(function() {
+//     if (currentAnimation) {
+//       //if there is a currentAnimation reverse it
+//       currentAnimation.reverse();
+//     }
+//     //play this box's animation
+//     this.animation.play();
+//     //set current animation to this box's animtion
+//     currentAnimation = this.animation;
+//   });
 // });
