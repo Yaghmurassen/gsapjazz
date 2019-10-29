@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
       //   y: "74%",
       //   autoAlpha: 1
       // },
-      { y: -940 }
+      { y: -940 },
+      "-=5.5"
     )
     .to(
       "#three",
@@ -122,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
     triggerHook: 0
   })
     .setTween(timeline)
-    .setPin("section")
+    .setPin("section", ".btn-test")
     .addTo(controller);
   // scene.offset(975);
 

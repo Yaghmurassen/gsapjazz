@@ -259,12 +259,12 @@ li {
   display: none;
 }
 
-/* .btn-test {
+.btn-test {
   position: absolute;
   left: 50%;
   bottom: -45%;
   display: none;
-} */
+}
 
 .fscreen {
   width: 100%;
@@ -288,9 +288,3 @@ li {
   height: 0px !important;
   padding: unset !important;
 }
-
-/* .btn-reverse  {
-  position: absolute;
-  bottom: 100px;
-  right: 70px;
-} */
