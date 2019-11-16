@@ -14,45 +14,56 @@ document.addEventListener("DOMContentLoaded", () => {
   timeline
     .fromTo(
       "#four",
-      6,
+      10,
       {
         bottom: -470
       },
       { y: -1145, bottom: -595 },
-      "-=6"
+      "-=10"
     )
     .to(
       "#three",
-      6,
+      10,
       {
         y: -700
       },
-      "-=6"
+      "-=10"
     )
     .fromTo(
       "#two",
-      6,
+      10,
       {
         y: 80,
         height: "105vh"
         // transform: "scale(1.34)"
       },
       {
-        y: -350
+        y: -400
       },
-      "-=6"
+      "-=10"
     )
     .fromTo(
       "#one",
-      6,
+      10,
       {
         y: 0
       },
       {
-        y: -250,
-        transform: "scale(1.6)"
+        // y: -350,
+        transform: "scale(1.3)"
       },
-      "-=6"
+      "-=10"
+    )
+    .fromTo(
+      "#one",
+      10,
+      {
+        y: 0
+      },
+      {
+        y: -350
+      },
+      "-=10"
     )
     .to(
       ".content, .blur",
