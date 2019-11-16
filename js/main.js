@@ -12,14 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   timeline
-    .to(
+    .fromTo(
       "#four",
       6,
-      // {
-      //   y: "74%",
-      //   autoAlpha: 1
-      // },
-      { y: -940 }
+      {
+        bottom: -470
+      },
+      { y: -1145, bottom: -595 },
+      "-=6"
     )
     .to(
       "#three",
@@ -29,19 +29,28 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       "-=6"
     )
-    .to(
+    .fromTo(
       "#two",
       6,
       {
-        y: -500
+        y: 80,
+        height: "105vh"
+        // transform: "scale(1.34)"
+      },
+      {
+        y: -350
       },
       "-=6"
     )
-    .to(
+    .fromTo(
       "#one",
       6,
       {
-        y: -250
+        y: 0
+      },
+      {
+        y: -250,
+        transform: "scale(1.6)"
       },
       "-=6"
     )
@@ -124,7 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .setTween(timeline)
     .setPin("section")
     .addTo(controller);
-  // scene.offset(975);
 
   $(".btn-test").click(() => {
     const timelineFirstScreen = new TimelineMax({
@@ -138,7 +146,6 @@ document.addEventListener("DOMContentLoaded", () => {
         //   },
         //   500
         // );
-        // console.log(" ca hide le container sans pression ?");
       }
     });
     // e.preventDefault;
@@ -165,8 +172,8 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         "-=1"
       );
+
     timelineFirstScreen.play();
-    // $("body").toggle(".hide-body");
     // $("#first-section").css("position", "absolute");
     $("body").addClass("hide-body");
     $(".scrollmagic-pin-spacer").addClass("hide-spacer");
@@ -175,6 +182,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // $("body").toggle(".hide-body");
       // $("#first-section").css("position", "fixed");
       $("body").removeClass("hide-body");
+      $(".row-menu").css("z-index", "999999");
+      $(".row-menu").addClass("z");
       $(".scrollmagic-pin-spacer").removeClass("hide-spacer");
       timelineFirstScreen.reverse();
       $("#first-section").show();
@@ -193,28 +202,138 @@ document.addEventListener("DOMContentLoaded", () => {
       //   },
       //   500
       // );
-      console.log(" ca hide le container sans pression ?");
-      // $(".btn-test").css({ bottom: "-100%", "margin-bottom": "500px" });
     });
   });
+
+  $(".btn-menu").click(() => {
+    const timelineMenu = new TimelineMax({
+      paused: true,
+      onComplete: function() {
+        $(".fscreen").css("height", "100vh");
+        // $(".btn-menu").click(() => {
+        // timelineMenu.reverse();
+        // timelineMenu.staggerFrom(
+        //   ".menu-container ul li",
+        //   1,
+        //   { x: -200, opacity: 0, ease: Expo.easeOut },
+        //   0.3
+        // );
+        // });
+        // $(".fscreen").css("height", "200vh");
+        // $("#first-section").hide();
+      }
+    });
+
+    timelineMenu
+      .to(".menu-container", 0.5, {
+        ease: Power2.easeInOut,
+        opacity: 1,
+        zIndex: 1
+      })
+      .staggerFrom(
+        ".menu-container ul li",
+        1,
+        { x: 0, opacity: 0, ease: Expo.easeOut },
+        0.3
+      );
+
+    timelineMenu.play();
+
+    $("body").addClass("hide-body");
+    $(".scrollmagic-pin-spacer").addClass("hide-spacer");
+    $(".btn-menu").addClass("btn-menu-toggle");
+    // console.log($(".btn-menu-toggle").length === 1);
+    // if ($(".btn-menu-toggle").length === 1) {
+    //   $(".btn-menu").toggleClass("btn-menu-toggle");
+    // }
+
+    // if ($(".btn-menu").hasClass(".btn-menu-toggle"))
+    $(".btn-menu").click(() => {
+      timelineMenu
+        .to(".menu-container", 0.5, {
+          ease: Power2.easeInOut,
+          opacity: 0,
+          zIndex: -1
+        })
+        .staggerFrom(
+          ".menu-container ul li",
+          0.5,
+          { x: 0, opacity: 0, ease: Expo.easeOut },
+          0.3
+        );
+      timelineMenu.play();
+
+      // timelineMenu.reverse();
+    });
+  });
+
+  $(".btn-test").click(() => {
+    const timelineFirstScreen = new TimelineMax({ paused: true });
+    // e.preventDefault;
+
+    timelineFirstScreen.to(".first-screen", 2, {
+      top: 0,
+      left: 0,
+      ease: Power2.easeInOut
+    });
+    timelineFirstScreen.play();
+    $(".row-menu").addClass("z");
+    $(".menu-container").css("z-index", "-1 !important");
+
+    console.log("click!!!");
+  });
+
+  if ($(".active").length == 1) {
+    console.log("eshhh");
+    $(".fscreen").css("height", "100vh");
+    $(".row-menu").css("display", "none");
+  }
+
+  // TweenMax.defaultEase = Linear.easeOut;
+
+  // new fullpage("#fullpage", {
+  //   //options here
+  //   autoScrolling: true,
+  //   navigation: true,
+  //   onLeave: (origin, destination, direction) => {
+  //     const section = destination.item;
+  //     const title = section.querySelector("h1");
+  //     const tl = new TimelineMax({ delay: 0.5 });
+  //     tl.fromTo(title, 0.5, { y: "50", opacity: 0 }, { y: "0", opacity: 1 });
+  //     if (destination.index === 1) {
+  //       const chairs = document.querySelectorAll(".chair");
+  //       const description = document.querySelector(".description");
+  //       tl.fromTo(chairs, 0.7, { x: "100%" }, { x: "-10%" })
+  //         .fromTo(
+  //           description,
+  //           0.5,
+  //           { opacity: 0, y: "50" },
+  //           { y: "0", opacity: 1 }
+  //         )
+  //         .fromTo(chairs[0], 1, { opacity: 1 }, { opacity: 1 })
+  //         .fromTo(chairs[1], 1, { opacity: 0 }, { opacity: 1 })
+  //         .fromTo(chairs[2], 1, { opacity: 0 }, { opacity: 1 });
+  //     }
+  //   }
+  // });
+
+  // traveling = () => {
+  //   console.log("ARHALOULOULOU");
+  //   let timeline = new TimelineMax();
+  //   timeline.to(".image-wrapper img", 2, {
+  //     height: "120vh",
+  //     width: "100%",
+  //     position: "absolute",
+  //     top: "-175px"
+  //   });
+  // };
+
+  // traveling = () => {
+  //   console.log("ARHALOULOULOU");
+  //   // new TimelineMax().set(".image-wrapper img", { className: "+=bat-fix" });
+  //   new TimelineMax().set(".blur", { className: "+=hide" });
+  // };
 });
-
-// traveling = () => {
-//   console.log("ARHALOULOULOU");
-//   let timeline = new TimelineMax();
-//   timeline.to(".image-wrapper img", 2, {
-//     height: "120vh",
-//     width: "100%",
-//     position: "absolute",
-//     top: "-175px"
-//   });
-// };
-
-traveling = () => {
-  console.log("ARHALOULOULOU");
-  // new TimelineMax().set(".image-wrapper img", { className: "+=bat-fix" });
-  new TimelineMax().set(".blur", { className: "+=hide" });
-};
 
 // const btnOpen = document.querySelector(".btn-open");
 // console.log(btnOpen);
@@ -255,20 +374,6 @@ traveling = () => {
 //   );
 //   tl.play();
 //   console.log("CLIQUEZ BANDE DE SALOPES!!!!!!!");
-// });
-
-$(".btn-test").click(() => {
-  const timelineFirstScreen = new TimelineMax({ paused: true });
-  // e.preventDefault;
-
-  timelineFirstScreen.to(".first-screen", 2, {
-    top: 0,
-    left: 0,
-    ease: Power2.easeInOut
-  });
-  timelineFirstScreen.play();
-  console.log("click!!!");
-});
 
 // btnOpen.addEventListener("click", () => {
 //   tl.play();
@@ -292,4 +397,4 @@ $(".btn-test").click(() => {
 //     //set current animation to this box's animtion
 //     currentAnimation = this.animation;
 //   });
-// });
+// })

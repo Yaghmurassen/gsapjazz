@@ -28,6 +28,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
+
   </head>
 
   <body>
@@ -40,19 +47,31 @@
       </nav>
       <div class="container">
         <div class="title">Jazzinière</div>
-        <div class="images">
-          <div class="image-wrapper" id="one">
-            <img src="./img/quatre.png" />
+          <div class="images">
+            <div class="image-wrapper" id="one">
+              <img src="./img/full-finale.png" />
+            </div>
+            <div class="image-wrapper" id="two">
+              <img src="./img/finale-33.png" />
+            </div>
+          <!--  <div class="image-wrapper" id="three">
+              <img src="./img/final-2.png" />
+            </div> -->
+            <div class="image-wrapper" id="four">
+              <img src="./img/bas-final.png" style="height:160vh" />
+            </div>
+        <!--  <div class="image-wrapper" id="one">
+            <img src="./img/1-final.jpg" />
           </div>
           <div class="image-wrapper" id="two">
-            <img src="./img/tres.png" />
+            <img src="./img/4-final.png" />
           </div>
           <div class="image-wrapper" id="three">
-            <img src="./img/2.png" />
-          </div>
-          <div class="image-wrapper" id="four">
+            <img src="./img/3-final.png" />
+          </div> -->
+         <!-- <div class="image-wrapper" id="four">
             <img src="./img/uno-dos.png" style="height:140vh" />
-          </div>
+          </div> -->
           <!-- <div class="image-wrapper bat" id="four" style="z-index: 99">
             <img src="./img/uno-dos.png" style="height: 140vh" />
           </div> -->
@@ -75,10 +94,15 @@
     </section>
     <button class="btn btn-primary btn-test">CLIQUE PUTE</button>
     <div class="fscreen">
-      <div
-        class="row"
-        style="margin-top: 100px;margin-bottom: 100px;margin-left: 5%;margin-right: 5%"
-      >
+      <div class="menu">
+        <button class="nav-tgl" aria-label="toggle menu">
+          <span aria-hidden="true"></span>
+        </button>
+        <nav class="nav">
+         
+        </nav>
+      </div>
+      <div class="row row-menu">
         <div class="col-12">
           <h1 style="margin-bottom: 35px;">Good Case Of The Blues</h1>
           <p style="line-height: 1.7;word-spacing: 3px;text-align: justify;">
@@ -107,6 +131,67 @@
       >
         CLIQUE PUTE
       </button>
-    </div>
+      <!-- <button
+        class="btn btn-menu">
+        | | |
+      </button>
+      <div class="menu-container animsition-overlay" data-animsition-overlay="true">
+        <ul style="display: flex;justify-content: center;margin-top: 32%;">
+            <li style="color: white; font-size:20px">
+              <a class="animsition-link"  
+                data-animsition-out-class="overlay-slide-out-top"
+                data-animsition-out-duration="2000" href="/home">Home
+              </a>
+            </li>
+            <li style="color: white; font-size:20px"><a href="#"></a>Contact</a></li>
+            <li style="color: white; font-size:20px"><a href="#"></a>Work</a></li>
+            <li style="color: white; font-size:20px"><a href="#"></a>Gallery</a></li>
+        </ul>
+      </div>
+    </div> -->
+
+    <script type="text/javascript">
+        $(".site-menu-toggle").click(function () {
+            var $this = $(this);
+            if ($("body").hasClass("menu-open")) {
+              $this.removeClass("open");
+              $(".js-site-navbar").fadeOut(400);
+              $("body").removeClass("menu-open");
+            } else {
+              $this.addClass("open");
+              $(".js-site-navbar").fadeIn(400);
+              $("body").addClass("menu-open");
+            }
+          });
+
+          var $root = $("html, body");
+
+          $('a.smoothscroll[href^="#"]').click(function () {
+            $root.animate(
+              {
+                scrollTop: $($.attr(this, "href")).offset().top
+              },
+              500
+            );
+
+            return false;
+          });
+
+          $("nav .dropdown").hover(
+            function () {
+              var $this = $(this);
+              $this.addClass("show");
+              $this.find("> a").attr("aria-expanded", true);
+              $this.find(".dropdown-menu").addClass("show");
+            },
+            function () {
+              var $this = $(this);
+              $this.removeClass("show");
+              $this.find("> a").attr("aria-expanded", false);
+              $this.find(".dropdown-menu").removeClass("show");
+            }
+          );
+    </script>
+
   </body>
 </html>

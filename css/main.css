@@ -170,17 +170,19 @@ li {
   height: 100%;
 }
 
-.one {
+/* #one {
   top: -10px;
-}
+} */
 .two {
   top: -50px;
 }
 #four {
-  bottom: -602px;
+  height: 105vh;
+  bottom: -470px;
 }
-.four {
-  top: -20px;
+
+#one img {
+  height: 115vh;
 }
 
 .content-image-wrapper h4 {
@@ -301,4 +303,186 @@ li {
 
 #first-section {
   position: fixed !important;
+}
+
+.btn-menu {
+  position: fixed;
+  top: 100px;
+  right: 70px;
+  transform: rotate(90deg);
+  color: #fff !important;
+  outline: none;
+  z-index: 9999999;
+  box-shadow: none !important;
+}
+
+.menu-container {
+  width: 100%;
+  height: 100vh;
+  background-color: indianred;
+  position: fixed;
+  top: 0px;
+  opacity: 0;
+  z-index: -1;
+}
+
+.row-menu {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 5% !important;
+  margin-right: 5% !important;
+}
+
+/* .z {
+  z-index: 99999999999999999999;
+} */
+
+.nav ul {
+  display: none;
+}
+
+.nav-tgl {
+  outline: none !important;
+  display: inline-block;
+  cursor: pointer;
+  position: fixed;
+  z-index: 100;
+  right: 30px;
+  top: 30px;
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  background: #fff;
+  box-shadow: 0px 4px 24px rgba(#000, 0.24);
+  line-height: 0.6;
+  text-align: center;
+}
+
+.nav-tgl > span {
+  display: inline-block;
+  position: relative;
+  height: 2px;
+  width: 34px;
+  border-radius: 1px;
+  background: #293335;
+  vertical-align: middle;
+}
+
+.nav-tgl > span:before {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  border-radius: 1px;
+  background: #293335;
+  transition: all 200ms;
+  top: -11px;
+  left: 3px;
+  width: 28px;
+}
+.nav-tgl > span:after {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  border-radius: 1px;
+  background: #293335;
+  transition: all 200ms;
+  top: 11px;
+  left: 6px;
+  width: 22px;
+}
+
+.nav-tgl > span:focus {
+  outline: none;
+}
+
+.nav-tgl > span:hover > span:after {
+  width: 34px;
+  left: 0;
+}
+.nav-tgl > span:hover > span:before {
+  width: 34px;
+  left: 0;
+}
+
+.nav:before {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  transition: all 500ms ease-in-out;
+
+  clip-path: circle(30px at calc(100% - 65px) 65px);
+  visibility: hidden;
+}
+
+.menu.active .nav:before {
+  visibility: visible;
+  clip-path: circle(100%);
+}
+
+.menu.active .nav-tgl > span {
+  height: 0;
+}
+.menu.active .nav-tgl > span:after {
+  top: 0px;
+  left: 0;
+  width: 34px;
+  transform: rotate(-45deg);
+}
+.menu.active .nav-tgl > span:before {
+  top: 0px;
+  left: 0;
+  width: 34px;
+  transform: rotate(45deg);
+}
+
+.active {
+  height: 100vh;
+}
+
+.s1 {
+  background-image: url("./img/couch.jpg");
+  background-size: cover;
+}
+.section h1 {
+  font-size: 64px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  background: linear-gradient(to left, #87c7df, #648896);
+}
+
+.s2 {
+  background: linear-gradient(to left top, rgb(189, 193, 199), white);
+}
+.s2 h1 {
+  font-size: 48px;
+  background: linear-gradient(to left, #404042, #373838);
+}
+
+.chair {
+  height: 60%;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.description {
+  margin-top: 20%;
+  width: 50%;
+  margin-left: 5%;
+  font-size: 20px;
+}
+.description p {
+  margin: 50px 0px;
 }
