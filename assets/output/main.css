@@ -1,11 +1,3 @@
-@charset "UTF-8";
-/* No CSS */
-/*# sourceMappingURL=barba.css.map */
-html,
-body {
-  background: red;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -455,11 +447,14 @@ li {
   height: 100vh;
 }
 
+.douille {
+  position: absolute;
+  bottom: -100%;
+}
+
 /* BARBA STUFF */
 .btn-barba {
   position: absolute;
   left: 15%;
-  bottom: -50%;
+  bottom: -100%;
 }
-
-/*# sourceMappingURL=main.css.map */
