@@ -69,3 +69,22 @@ Barba.Pjax.getTransition = function() {
 };
 
 Barba.Pjax.start();
+
+document.addEventListener("DOMContentLoaded", () => {
+  $(".reload").click(() => {
+    // document.location.href("/");
+    // window.location.href = "/";
+    console.log(window.location.href);
+
+    let oldlink = document.getElementsByTagName(
+      "link[href='./assets/output/barba.css']"
+    );
+
+    let newlink = document.createElement("link");
+    newlink.setAttribute("rel", "stylesheet");
+    newlink.setAttribute("type", "text/css");
+    newlink.setAttribute("href", "./assets/output/main.css");
+
+    oldlink.replaceChild(newlink, oldlink);
+  });
+});
