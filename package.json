@@ -1,0 +1,28 @@
+{
+  "name": "gsapjazz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {
+    "@barba/core": "^2.8.0",
+    "connect": "^3.7.0",
+    "jquery": "^3.4.1",
+    "owl.carousel": "^2.3.4",
+    "sass": "^1.23.6",
+    "serve-static": "^1.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yaghmurassen/gsapjazz.git"
+  },
+  "author": "Yaghmurassen Sainson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yaghmurassen/gsapjazz/issues"
+  },
+  "homepage": "https://github.com/Yaghmurassen/gsapjazz#readme"
+}
