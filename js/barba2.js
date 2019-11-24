@@ -1,7 +1,7 @@
 Barba.Pjax.start();
 // Barba.Prefetch.init();
 
-var transitionAnimation = Barba.BaseTransition.extend({
+let transitionAnimation = Barba.BaseTransition.extend({
   start: function() {
     Promise.all([this.newContainerLoading, this.startTransition()]).then(
       this.fadeIn.bind(this)
@@ -9,8 +9,8 @@ var transitionAnimation = Barba.BaseTransition.extend({
   },
 
   startTransition: function() {
-    var transitionPromise = new Promise(function(resolve) {
-      var outTransition = new TimelineMax();
+    let transitionPromise = new Promise(function(resolve) {
+      let outTransition = new TimelineMax();
 
       outTransition
 
@@ -49,8 +49,8 @@ var transitionAnimation = Barba.BaseTransition.extend({
   fadeIn: function() {
     $(window).scrollTop(0);
 
-    var _this = this;
-    var $el = $(this.newContainer);
+    let _this = this;
+    let $el = $(this.newContainer);
 
     TweenMax.set($(this.oldContainer), { display: "none" });
     TweenMax.set($el, { visibility: "visible", opacity: 0 });
@@ -67,7 +67,155 @@ var transitionAnimation = Barba.BaseTransition.extend({
       opacity: 1,
       onComplete: function() {
         _this.done();
-        console.log("done");
+        let controller = new ScrollMagic.Controller();
+
+        // if (window.location.href.match('home'))
+        let timeline = new TimelineMax({
+          onComplete: function() {
+            // $(".blur").addClass("hide");
+            // $(".btn-test").css("display", "block");
+            console.log("onComplete");
+            $(".scrollmagic-pin-spacer").css("height", "unset !important");
+          },
+          onStart: function() {
+            // $(".blur").removeClass("hide");
+          }
+        });
+        timeline
+          .fromTo(
+            "#four",
+            10,
+            {
+              bottom: -470
+            },
+            { y: -1070, bottom: -595 },
+            "-=10"
+          )
+          .to(
+            "#three",
+            10,
+            {
+              y: -700
+            },
+            "-=10"
+          )
+          .fromTo(
+            "#two",
+            10,
+            {
+              y: 80,
+              height: "105vh"
+              // transform: "scale(1.34)"
+            },
+            {
+              y: -400
+            },
+            "-=10"
+          )
+          .fromTo(
+            "#one",
+            10,
+            {
+              y: 0
+            },
+            {
+              // y: -350,
+              transform: "scale(1.3)"
+            },
+            "-=10"
+          )
+          .fromTo(
+            "#one",
+            10,
+            {
+              y: 0
+            },
+            {
+              y: -350
+            },
+            "-=10"
+          )
+          .to(
+            ".content, .blur",
+            6,
+            {
+              top: "-53%"
+            },
+            "-=6"
+          )
+          .to(
+            ".img-max",
+            6,
+            {
+              top: "20%"
+            },
+            "-=6"
+          )
+          .to(
+            ".title, nav, .footer-wrapper",
+            6,
+            {
+              y: "-100%",
+              opacity: 0
+            },
+            "-=6"
+          )
+          .from(
+            ".un",
+            3,
+            {
+              top: "40px",
+              autoAlpha: 0
+            },
+            "-=4"
+          )
+          .from(
+            ".deux",
+            3,
+            {
+              top: "40px",
+              autoAlpha: 0
+            },
+            "-=3.5"
+          )
+          .from(
+            ".trois",
+            3,
+            {
+              top: "40px",
+              autoAlpha: 0
+            },
+            "-=3.5"
+          )
+          .from(
+            ".quatre",
+            3,
+            {
+              top: "40px",
+              autoAlpha: 0
+            },
+            "-=3.5"
+          )
+          .from(
+            ".text",
+            3,
+            {
+              y: 60,
+              autoAlpha: 0
+            },
+            "-=4"
+          );
+
+        let scene = new ScrollMagic.Scene({
+          triggerElement: "body",
+          duration: "100%",
+          triggerHook: 0
+        })
+          .setTween(timeline)
+          .setPin("section")
+          .addTo(controller);
+
+        if (window.location.href.match("home")) console.log(true);
       }
     });
   }

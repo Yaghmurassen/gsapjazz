@@ -295,11 +295,11 @@ li {
   right: 70px;
 } */
 .scrollmagic-pin-spacer {
-  height: 1150px !important;
+  height: 1150px;
 }
 
 #first-section {
-  position: fixed !important;
+  /* position: fixed !important; */
   /* margin-top: -40px; */
   /* overflow: scroll; */
 }
@@ -510,7 +510,6 @@ li {
   padding: 30px 90px;
   color: #fff;
 
-  /*NEW */
   z-index: 3;
 }
 

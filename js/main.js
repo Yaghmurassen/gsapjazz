@@ -3,12 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let timeline = new TimelineMax({
     onComplete: function() {
-      $(".blur").addClass("hide");
-      console.log(" Marche ?");
-      $(".btn-test").css("display", "block");
+      // $(".blur").addClass("hide");
+      // $(".btn-test").css("display", "block");
+      console.log("onComplete");
+      $(".scrollmagic-pin-spacer").css("height", "unset !important");
     },
     onStart: function() {
-      $(".blur").removeClass("hide");
+      // $(".blur").removeClass("hide");
     }
   });
   timeline
@@ -186,18 +187,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     timelineFirstScreen.play();
     // $("#first-section").css("position", "absolute");
-    $("body").addClass("hide-body");
+    $(".body").addClass("hide-body");
     $(".scrollmagic-pin-spacer").addClass("hide-spacer");
 
     $(".btn-opacity").click(() => {
       // $("body").toggle(".hide-body");
       // $("#first-section").css("position", "fixed");
-      $("body").removeClass("hide-body");
+      $(".body").removeClass("hide-body");
       $(".row-menu").css("z-index", "999999");
       $(".row-menu").addClass("z");
       $(".scrollmagic-pin-spacer").removeClass("hide-spacer");
       timelineFirstScreen.reverse();
-      $("#first-section").show();
+      $("#barba-wrapper").show();
       timelineFirstScreen.to(
         ".scrollmagic-pin-spacer",
         0.5,
