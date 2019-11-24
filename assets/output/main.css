@@ -299,7 +299,7 @@ li {
 }
 
 #first-section {
-  /* position: fixed !important; */
+  position: fixed !important;
   /* margin-top: -40px; */
   /* overflow: scroll; */
 }
