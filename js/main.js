@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
       "#four",
       10,
       {
-        bottom: -470
+        bottom: -620
       },
-      { y: -1070, bottom: -595 },
+      { y: -848, bottom: -595 },
       "-=10"
     )
     .to(

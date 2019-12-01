@@ -1,5 +1,5 @@
 Barba.Pjax.start();
-// Barba.Prefetch.init();
+Barba.Prefetch.init();
 
 let transitionAnimation = Barba.BaseTransition.extend({
   start: function() {
@@ -15,17 +15,17 @@ let transitionAnimation = Barba.BaseTransition.extend({
       outTransition
 
         .to(".title", 1, { y: -50, autoAlpha: 0, ease: Power2.easeOut })
-        .set(".color-wipe", { display: "block", y: "100%" }, "-=0.7")
+        .set(".color-wipe", { display: "block", x: "-200%" }, "-=0.7")
         .staggerFromTo(
           ".color-wipe",
           1,
-          { y: "100%" },
-          { y: "-100%", ease: Expo.easeOut },
-          0.2,
+          { x: "0%" },
+          { x: "100%", ease: Expo.easeOut },
+          2,
           "-=0.7"
         )
 
-        .to(".loader", 1, {
+        .to(".loader", 1.5, {
           autoAlpha: 1,
           onComplete: function() {
             resolve();
@@ -34,9 +34,9 @@ let transitionAnimation = Barba.BaseTransition.extend({
 
         .staggerFromTo(
           ".color-wipe",
-          1,
-          { y: "-100%" },
-          { y: "-200%", ease: Expo.easeIn },
+          1.5,
+          { x: "100%" },
+          { x: "200%", ease: Expo.easeIn },
           0.2,
           "-=0.5"
         )
@@ -60,7 +60,7 @@ let transitionAnimation = Barba.BaseTransition.extend({
       ".title",
       1.5,
       { y: 30, autoAlpha: 0 },
-      { delay: 0.8, y: 0, autoAlpha: 1, ease: Expo.easeOut }
+      { delay: 0.8, autoAlpha: 1, ease: Expo.easeOut }
     );
 
     TweenMax.to($el, 0.1, {

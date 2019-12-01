@@ -176,8 +176,8 @@ li {
 }
 
 #four {
-  height: 105vh;
-  bottom: -470px;
+  height: 130vh;
+  /* bottom: -405px; */
 }
 
 #one img {
@@ -550,11 +550,11 @@ li {
 }
 
 .color-wipes-animate {
-  display: grid;
+  /* display: grid; */
   grid-template-columns: repeat(5, 1fr);
   left: 0;
   position: fixed;
-  top: 100%;
+  left: -100%;
   width: 100%;
   height: 100vh;
   z-index: 5;
@@ -564,7 +564,7 @@ li {
   height: 100vh;
   width: 100%;
   background: #be2829;
-  display: none;
+  /* display: none; */
 }
 
 .color-wipe:nth-child(1) {
