@@ -459,6 +459,7 @@ li {
   position: absolute;
   left: 15%;
   bottom: 20%;
+  opacity: 0;
 }
 
 /* .loader {
@@ -564,7 +565,7 @@ li {
   height: 100vh;
   width: 100%;
   background: #be2829;
-  /* display: none; */
+  display: none;
 }
 
 .color-wipe:nth-child(1) {
@@ -589,4 +590,17 @@ li {
 
 #barba-wrapper {
   height: 200vh;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.sax {
+  position: absolute;
+  left: -140px;
+  opacity: 0;
+  /* transform: rotate(-180deg); */
 }

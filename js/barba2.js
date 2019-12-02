@@ -15,7 +15,8 @@ let transitionAnimation = Barba.BaseTransition.extend({
       outTransition
 
         .to(".title", 1, { y: -50, autoAlpha: 0, ease: Power2.easeOut })
-        .set(".color-wipe", { display: "block", x: "-200%" }, "-=0.7")
+        // .to("#barber-wrapper", 1, { autoAlpha: 0, ease: Power2.easeOut })
+        .set(".color-wipe", { display: "block" }, "-=0.7")
         .staggerFromTo(
           ".color-wipe",
           1,
@@ -62,6 +63,43 @@ let transitionAnimation = Barba.BaseTransition.extend({
       { y: 30, autoAlpha: 0 },
       { delay: 0.8, autoAlpha: 1, ease: Expo.easeOut }
     );
+
+    TweenMax.fromTo(
+      ".title-barba",
+      2,
+      {
+        transform: "translateX(-40vh)",
+        opacity: 0,
+        ease: Power2.easeInOut
+      },
+      {
+        transform: "translateX(38vh)",
+        opacity: 1,
+        ease: Power2.easeInOut,
+        delay: 0.5
+      }
+    );
+
+    TweenMax.fromTo(
+      "#barba-wrapper",
+      2,
+      {
+        autoAlpha: 0,
+        ease: Power2.easeInOut
+      },
+      {
+        autoAlpha: 1,
+        ease: Power2.easeInOut
+      }
+    );
+
+    TweenMax.to(".sax", 4, {
+      left: "80%",
+      opacity: 1,
+      transform: "rotate(180deg)",
+      ease: Power2.easeInOut,
+      delay: 1
+    });
 
     TweenMax.to($el, 0.1, {
       opacity: 1,

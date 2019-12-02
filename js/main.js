@@ -91,6 +91,14 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       "-=6"
     )
+    .to(
+      ".btn-barba",
+      6,
+      {
+        opacity: 1
+      },
+      "-=6"
+    )
     .from(
       ".un",
       3,
