@@ -105,9 +105,23 @@ let transitionAnimation = Barba.BaseTransition.extend({
       opacity: 1,
       onComplete: function() {
         _this.done();
+
+        //////////////////////////////////// Disabled reload on the same page
+        if (window.location.href.match("page4")) {
+          // $(".page4").attr("disabled", true);
+          $(".page4").click(e => {
+            e.preventDefault();
+            // alert("You're already on the page 4");
+          });
+        }
+        if (window.location.href.match("page5")) {
+          $(".page5").click(e => {
+            e.preventDefault();
+          });
+        }
+
         let controller = new ScrollMagic.Controller();
 
-        // if (window.location.href.match('home'))
         let timeline = new TimelineMax({
           onComplete: function() {
             // $(".blur").addClass("hide");
@@ -252,8 +266,6 @@ let transitionAnimation = Barba.BaseTransition.extend({
           .setTween(timeline)
           .setPin("section")
           .addTo(controller);
-
-        if (window.location.href.match("home")) console.log(true);
       }
     });
   }
@@ -264,25 +276,15 @@ Barba.Pjax.getTransition = function() {
    * Here you can use your own logic!
    * For example you can use different Transition based on the current page or link...
    */
+  // if (window.location.href.match("page4")) {
+  //   if ($(".page4").click()) {
+  //     return transitionAnimation;
+  //   }
+  // }
+  // if (window.location.href.match("page5")) {
+  //   if ($(".page5").click()) {
+  //     return transitionAnimation;
+  //   }
+  // }
   return transitionAnimation;
 };
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   if (window.location.href.match("home"))
-//     $(".reload").click(() => {
-//       // document.location.href("/");
-//       // window.location.href = "/";
-//       console.log("NIQUE TA MERE FILS DE PUTE");
-
-//       let oldlink = document.getElementsByTagName(
-//         "link[href='./assets/output/barba.css']"
-//       );
-
-//       let newlink = document.createElement("link");
-//       newlink.setAttribute("rel", "stylesheet");
-//       newlink.setAttribute("type", "text/css");
-//       newlink.setAttribute("href", "./assets/output/main.css");
-
-//       oldlink.replaceNode(newlink, oldlink);
-//     });
-// });
