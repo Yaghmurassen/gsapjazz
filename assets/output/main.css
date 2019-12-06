@@ -604,3 +604,32 @@ li {
   opacity: 0;
   /* transform: rotate(-180deg); */
 }
+
+.row-slim {
+  position: relative;
+  background-color: burlywood;
+  border-radius: 3px;
+  padding: 25px;
+  margin: 15px 15vw 40px !important;
+  align-items: center;
+  box-shadow: rgba(222, 184, 135, 0.41) 7px 7px 18px 0px;
+}
+
+.row-slim img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+
+.row-slim > .img-responsive {
+  height: 4vh;
+  position: absolute;
+  top: -15px;
+  right: 30px;
+}
+
+/* .fp-section.fp-table,
+.fp-slide.fp-table,
+.fp-tableCell {
+  height: 100vh !important;
+} */
