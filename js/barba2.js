@@ -138,9 +138,9 @@ let transitionAnimation = Barba.BaseTransition.extend({
             "#four",
             10,
             {
-              bottom: -470
+              bottom: "-70vh"
             },
-            { y: -1070, bottom: -595 },
+            { y: -933, bottom: -675 },
             "-=10"
           )
           .to(
@@ -155,8 +155,8 @@ let transitionAnimation = Barba.BaseTransition.extend({
             "#two",
             10,
             {
-              y: 80,
-              height: "105vh"
+              y: 130
+              // height: "105vh"
               // transform: "scale(1.34)"
             },
             {
@@ -209,6 +209,14 @@ let transitionAnimation = Barba.BaseTransition.extend({
             {
               y: "-100%",
               opacity: 0
+            },
+            "-=6"
+          )
+          .to(
+            ".btn-barba",
+            6,
+            {
+              opacity: 1
             },
             "-=6"
           )

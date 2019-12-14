@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
       "#four",
       10,
       {
-        bottom: -620
+        bottom: "-70vh"
       },
-      { y: -848, bottom: -595 },
+      { y: -933, bottom: -675 },
       "-=10"
     )
     .to(
@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "#two",
       10,
       {
-        y: 80,
-        height: "105vh"
+        y: 130
+        // height: "105vh"
         // transform: "scale(1.34)"
       },
       {

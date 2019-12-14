@@ -28,7 +28,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 
     <!-- FULLPAGE -->
-    <!-- <script
+    <script
       type="text/javascript"
       src="/vendor/jquery.fullpage.extensions.min.js"
     ></script>
@@ -46,13 +46,11 @@
       src="/vendor/fullpage.continuousHorizontal.min.js"
     ></script>
 
-    -->
-
     <!-- Fullpage css -->
-    <!-- <script src="/vendor/jquery.fullpage.css"></script> -->
-    <!-- <link rel="stylesheet" href="/vendor/jquery.fullpage.min.css" /> -->
-    <!-- <link rel="stylesheet" href="/vendor/jquery.fullpage.css" /> -->
-    <!-- <link rel="stylesheet" href="/vendor/jquery.fullpage.min.css.map" /> -->
+    <script src="/vendor/jquery.fullpage.css"></script>
+    <link rel="stylesheet" href="/vendor/jquery.fullpage.min.css" />
+    <link rel="stylesheet" href="/vendor/jquery.fullpage.css" />
+    <link rel="stylesheet" href="/vendor/jquery.fullpage.min.css.map" />
 
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -99,10 +97,13 @@
                   <img src="/assets/img/full-finale-f-2.png" />
                 </div>
                 <div class="image-wrapper" id="two">
-                  <img src="/assets/img/full-finale-ff-2.png" />
+                  <img src="/assets/img/dove2.png" />
                 </div>
                 <div class="image-wrapper" id="four">
-                  <img src="/assets/img/bas-final.png" style="height:160vh" />
+                  <img
+                    src="/assets/img/old/bas-final.png"
+                    style="height:160vh"
+                  />
                 </div>
               </div>
 
@@ -134,5 +135,18 @@
     <script src="/js/barba.js"></script> -->
     <script src="/js/barba2.js"></script>
     <script src="/js/main.js"></script>
+    <!-- <script>
+      $(document).ready(function() {
+        console.log("fullpage");
+        $("#fullpage").fullpage({
+          //options here
+          autoScrolling: false,
+          scrollHorizontally: true
+        });
+
+        //methods
+        $.fn.fullpage.setAllowScrolling(false);
+      });
+    </script> -->
   </body>
 </html>
