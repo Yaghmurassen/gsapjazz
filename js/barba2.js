@@ -120,6 +120,13 @@ let transitionAnimation = Barba.BaseTransition.extend({
           });
         }
 
+        /////////////////////////////// Burger Animation
+        $(".nav-tgl").click(() => {
+          $(".menu").hasClass("active")
+            ? $(".menu").removeClass("active")
+            : $(".menu").addClass("active");
+        });
+
         let controller = new ScrollMagic.Controller();
 
         let timeline = new TimelineMax({
