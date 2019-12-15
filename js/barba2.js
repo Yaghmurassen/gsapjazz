@@ -213,7 +213,7 @@ let transitionAnimation = Barba.BaseTransition.extend({
             "-=6"
           )
           .to(
-            ".btn-barba",
+            ".btn-concert, .btn-goodcase, .btn-contact",
             6,
             {
               opacity: 1

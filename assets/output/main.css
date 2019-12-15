@@ -408,7 +408,7 @@ li {
   left: 0;
 }
 
-.nav:before {
+/* .nav:before {
   display: block;
   position: fixed;
   top: 0;
@@ -425,7 +425,7 @@ li {
 .menu.active .nav:before {
   visibility: visible;
   clip-path: circle(100%);
-}
+} */
 
 .menu.active .nav-tgl > span {
   height: 0;
@@ -445,26 +445,46 @@ li {
   transform: rotate(45deg);
 }
 
-.active {
+/* .active {
   height: 100vh;
-}
+} */
 
-.douille {
+/* .douille {
   position: absolute;
   bottom: -100%;
-}
+} */
 
 /* BARBA STUFF */
-.btn-barba {
+.btn-concert {
   position: absolute;
   left: 15%;
   bottom: 20%;
   opacity: 0;
 }
 
-/* .loader {
-  display: none;
-} */
+.btn-contact {
+  position: absolute;
+  left: 40%;
+  bottom: 70%;
+  opacity: 0;
+}
+
+.btn-goodcase {
+  position: absolute;
+  left: 70%;
+  bottom: 45%;
+  opacity: 0;
+}
+
+.btn-home {
+  background-color: unset !important;
+  padding: 100px !important;
+  border: 1px #384162 solid !important;
+}
+
+.btn-home a {
+  padding: 100px;
+}
 
 * {
   margin: 0;

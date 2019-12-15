@@ -44,8 +44,23 @@
           <div class="bg-2">
             <nav class="nav-barba">
               <a class="reload" href="/">Home</a>
-              <a class="page4" href="/page4.html">page 04</a>
+              <a class="page4" href="/concert.html">page 04</a>
               <a class="page5" href="/goodcaseoftheblues.html">Good case of the blues</a>
+              <a href="/contact.html">Contact</a>
+              <div class="menu">
+                <button class="nav-tgl" type='button' aria-label='toggle menu'>
+                <span aria-hidden='true'></span>
+                <nav class="nav">
+                  <ul>
+                    <li>Home</li>
+                    <li>good Case of the blues</li>
+                    <li>Concept</li>
+                    <li>Contact</li>
+                  </ul>
+                </nav>
+                </button>
+              </div>
+                
             </nav>
             <div class="title-barba">
               <h1>Good case Of the blues</h1>
@@ -120,5 +135,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/barba2.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.querySelector('.menu');
+          const btn = menu.querySelector('.nav-tgl');
+          btn.addEventListener('click', evt => {
+            console.log("Ca cliiikkkkk");
+            if (menu.className.indexOf('active') === -1) {
+              menu.classList.add('active');
+            } else {
+              menu.classList.remove('active');
+            }
+          }
+        )
+      });
+    </script>
   </body>
 </html>

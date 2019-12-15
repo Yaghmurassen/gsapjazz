@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "-=6"
     )
     .to(
-      ".btn-barba",
+      ".btn-concert, .btn-goodcase, .btn-contact",
       6,
       {
         opacity: 1
